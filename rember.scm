@@ -12,4 +12,4 @@
         (else (cons (car l) (rember_star a (cdr l))))))
       (else (cons (rember_star a (car l)) (rember_star a (cdr l)))))))
 
-(print (rember_star 'cup '((coffee) cup ((tea) cup) (and (hick)) cup)))
+(print (rember_star 'tea '((coffee) cup ((tea) cup) (and (hick)) cup)))
