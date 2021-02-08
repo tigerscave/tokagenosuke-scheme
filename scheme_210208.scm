@@ -311,3 +311,17 @@
       ((one? n) (cdr lat))
       (else (cons (car lat) (rempick2 (sub1 n) (cdr lat)))))))
 (print (rempick2 3 '(1 2 3 4 5)))
+
+;--------------------------
+(print '[rember_star])
+(define rember_star
+  (lambda (a lat)
+    (cond
+      ((null? lat) (quote ()))
+      ((atom? (car lat))
+      (cond
+        ((eq? (car lat) a) (rember_star a (cdr lat)))
+        (else (cons (car lat) (rember_star a (cdr lat))))))
+      (else
+        (cons (rember_star a (car lat)) (rember_star a (cdr lat)))))))
+(print (rember_star 'a '(a (a b c) (a) b c (((a)) a b c d))))
